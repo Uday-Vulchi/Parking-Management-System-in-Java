@@ -1,0 +1,130 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package s4970;
+
+/**
+ *
+ * @author Uday Prakash
+ */
+
+import java.util.Scanner;
+
+public class ParkingManagementSystem {
+    public static void main(String[] args){
+        Scanner k=new Scanner(System.in);
+        System.out.println("\t\t\tWelcome to Parking management System\t\t\t\n\n\n");
+        int N_Slots;
+        System.out.println("Enter Number of slots");
+        N_Slots=k.nextInt();
+        int[]  V_type;
+            V_type = new int[20];
+         int[]  regno;
+            regno = new int[20]; 
+         int[] N_days;
+         N_days = new int[20]; 
+         int[] Time;
+         Time=new int[20]; 
+         int[] Amount;
+         Amount=new int[20];
+        for(int i=0;i<=N_Slots;i++)
+        {
+            System.out.println("\n");
+           System.out.println("Enter the vehicle type\n 1. For Bike\n 2. For Autorickshaw\n 3. For Car");
+            V_type[i]=k.nextInt();
+           System.out.println("\n");
+           
+            System.out.println("Enter the registration number");
+             regno[i]=k.nextInt();
+           System.out.println("\n");
+           
+             System.out.println("Enter number of days for parking");
+             N_days[i]=k.nextInt();
+                 
+               if(V_type[i]==1)
+               {
+                    if(N_days[i]==0)
+                   {
+                       System.out.println("\n");
+                      System.out.println("Enter the parking time on hourly bases");
+                      Time[i]=k.nextInt();
+                      Amount[i]=50*Time[i];
+                   }
+                    else
+                    {
+                        Amount[i]=100*N_days[i];
+                    }
+               }
+               if(V_type[i]==2)
+               {
+                    if(N_days[i]==0)
+                   {
+                       System.out.println("\n");
+                      System.out.println("Enter the parking time on hourly bases");
+                      Time[i]=k.nextInt();
+                      Amount[i]=80*Time[i];
+                   }
+                    else
+                    {
+                        Amount[i]=120*N_days[i];
+                    }
+               }
+               if(V_type[i]==3)
+               {
+                    if(N_days[i]==0)
+                   {
+                       System.out.println("\n");
+                      System.out.println("Enter the parking time on hourly bases");
+                      Time[i]=k.nextInt();
+                      Amount[i]=100*Time[i];
+                   }
+                    else
+                    {
+                        Amount[i]=200*N_days[i];
+                    }
+               }
+               
+        }
+        System.out.println("\n\n");
+          System.out.println("Enter the registration number of vehicle to be searched and to know the billibg details");
+        int s;
+        s=k.nextInt();
+        int z=0;
+        for(int i=0;i<=N_Slots;i++){
+            if(s==regno[i]){
+                z=i;
+            }
+        }
+     System.out.println("\n");
+        if(V_type[z]==1){
+            System.out.println("The Vehicle type is Bike");
+        }
+        else if(V_type[z]==2){
+            System.out.println("The Vehicle type is Auto");
+        }
+        else if(V_type[z]==3){
+            System.out.println("The Vehicle type is Car");
+        }
+        System.out.println("\n");
+        System.out.println("The Vehicle registration number is.."+regno[z]);
+        if(N_days[z]!=0)
+        {
+            System.out.println("\n");
+             System.out.println("The Number of days used for parking are.."+N_days[z]);
+        }
+        else
+        {
+            System.out.println("\n");
+        System.out.println("The time of parking is.."+Time[z]+"hrs");
+        }
+        System.out.println("\n");
+        
+        System.out.println("The Total Amount is...$"+Amount[z]);
+  
+           }
+        
+    }
+
+    
