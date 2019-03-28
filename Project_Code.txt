@@ -15,7 +15,15 @@ import java.util.Scanner;
 public class ParkingManagementSystem {
     public static void main(String[] args){
         Scanner k=new Scanner(System.in);
-        System.out.println("\t\t\tWelcome to Parking management System\t\t\t\n\n\n");
+        System.out.println("\t\t**************************************\t\t");
+        System.out.println("\t\t*Welcome to Parking management System*\t\t");
+        System.out.println("\t\t**************************************\t\t\n\n\n");
+        System.out.println("\tPrices for Different types of Vehicles are as follows:");
+        System.out.println("\t-----------------------------------------------------\n");
+        System.out.println("\t Bikes or Any other 2 wheeler\t |\t $50/hr \t|\t $100/day\n");
+        System.out.println("\t Auto or Any other 3 wheeler \t |\t $80/hr \t|\t $120/day\n");
+        System.out.println("\t Car or Any other 4 wheeler  \t |\t $100/hr\t|\t $200/day\n");
+        System.out.println("\n");
         int N_Slots;
         System.out.println("Enter Number of slots");
         N_Slots=k.nextInt();
